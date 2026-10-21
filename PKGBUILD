@@ -16,9 +16,9 @@ sha256sums=('c10ff6dafe1d93d2cd0a1209e3e989d4a4cc68f28c7e31737a39c669f6baccec'
 
 package() {
     # Binary
-    install -Dm755 \
-        "metroid-prime-port-linux-x86_64/metroid_prime_port" \
-        "$pkgdir/usr/bin/metroid_prime_port"
+    install -dm755 "$pkgdir/usr/share/licenses/$pkgname"
+    cp -a "metroid-prime-port-linux-x86_64/share/licenses/metroid-prime-port/." \
+          "$pkgdir/usr/share/licenses/$pkgname/"
 
     # All license / notice files (structure changed in 0.31.0)
     install -dm755 "$pkgdir/usr/share/licenses/$pkgname"
